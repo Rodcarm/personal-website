@@ -1,0 +1,24 @@
+{% extends  'core/base.html' %}
+
+{% block title %} About me {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/about3-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>About me</h1>
+<span class="subheading"></span>
+{% endblock %}
+
+{% block content %}
+<div class="row"> 
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/avatar2.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">Rodrigo Carmona</h2>   
+        <p>I from Mexico City and I am passionate about video games and technology</p>
+        <p>I want to grow up as a python developer and grow up in the technology industry. I am an autodidact person and I am good to work in a team.</p>
+        <p>In my free time, I make video games and I continue to study to be better with my programming skills.</p>
+    </div>
+</div>
+{% endblock %}
