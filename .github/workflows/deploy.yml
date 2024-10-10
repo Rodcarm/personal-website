@@ -21,14 +21,11 @@ jobs:
         run: |
           git config --global user.name "Rodrigo" 
           git config --global user.email "rcarmona@realmetrics.io"
-      - name: Fetch and Merge Remote Changes
-        run: |
-          git fetch origin
-          git merge origin/main
+  
       - name: Clean and Optimize Git Repository
         run: |
           git gc --prune=now --aggressive
           git repack -a -d --depth=250 --window=250
       - name: Push to gitAccionTest
         run: |
-          git push https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
+          git push --force https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
