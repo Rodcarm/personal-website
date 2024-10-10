@@ -15,6 +15,7 @@ jobs:
           repository: 'Rodcarm/personal-website' # Correct repository reference
           token: ${{ secrets.API_TOKEN_GITHUB }}
           ref: main
+          fetch-depth: 0 
           
       - name: Set up Git Configuration
         run: |
@@ -23,7 +24,7 @@ jobs:
       - name: Clean and Optimize Git Repository
         run: |
           git gc --prune=now --aggressive
-          git repack -a -d --depth=250 --window=250  # Optimización adicional
+          git repack -a -d --depth=250 --window=250
       - name: Push to gitAccionTest
         run: |
           git push https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
