@@ -20,6 +20,10 @@ jobs:
         run: |
           git config --global user.name "Rodrigo" 
           git config --global user.email "rcarmona@realmetrics.io"
+      - name: Clean and Optimize Git Repository
+        run: |
+          git gc --prune=now --aggressive
+          git repack -a -d --depth=250 --window=250  # Optimización adicional
       - name: Push to gitAccionTest
         run: |
-          git push --mirror https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
+          git push https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
