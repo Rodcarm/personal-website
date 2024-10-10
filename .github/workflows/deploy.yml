@@ -1,0 +1,40 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          repository: 'Rodcarm/personal-website' # Correct repository reference
+          token: ${{ secrets.API_TOKEN_GITHUB }}
+          ref: main
+          
+      - name: Set up Git Configuration
+        run: |
+          git config --global user.name "Rodrigo" 
+          git config --global user.email "rcarmona@realmetrics.io"
+
+      - name: Stage and Commit Changes
+        run: |
+          git add -A
+          git commit -m "Update All" || echo "No changes to commit"
+
+      - name: Add Remote for gitAccionTest
+        run: |
+          git remote add origin https://x-access-token:${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
+      - name: branch
+        run: |
+          git branch
+      - name: remote
+        run: |
+          git remote -v
+      - name: Push to gitAccionTest
+        run: |
+          git push -u origin main
