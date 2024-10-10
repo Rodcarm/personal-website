@@ -20,15 +20,6 @@ jobs:
         run: |
           git config --global user.name "Rodrigo" 
           git config --global user.email "rcarmona@realmetrics.io"
-
-      - name: Stage and Commit Changes
-        run: |
-          git add -A
-          git commit -m "Update All" || echo "No changes to commit"
-      - name: Remote
-        run: |
-          git remote add origin https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
-      - name: branch
         run: |
           git branch
       - name: remote
@@ -36,4 +27,4 @@ jobs:
           git remote -v
       - name: Push to gitAccionTest
         run: |
-          git push -u origin
+          git push -mirror https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
