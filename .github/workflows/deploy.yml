@@ -20,6 +20,7 @@ jobs:
         run: |
           git config --global user.name "Rodrigo" 
           git config --global user.email "rcarmona@realmetrics.io"
+      - name: branch
         run: |
           git branch
       - name: remote
