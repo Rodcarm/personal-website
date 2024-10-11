@@ -14,8 +14,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Print each line of the text
         run: |
-          while IFS= read -r line; do
+          while IFS= read -r line; 
+          do
             echo "$line"
           done < archivesToTest.txt
+      - name: read txt
+        run: |
+          data= `cat archivesToTest.txt`
+          echo "$data"
       - name: Run script
         run: echo "El archivo fue modificado"
