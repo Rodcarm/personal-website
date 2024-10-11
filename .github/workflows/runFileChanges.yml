@@ -1,0 +1,14 @@
+name: Run File Changes
+on:
+  push:
+    paths:
+      - 'webpersonal/core/views.py'
+jobs:
+  file-update-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run script
+        run: echo "El archivo fue modificado"
