@@ -20,6 +20,6 @@ jobs:
       - name: read txt
         run: |
           data= 'cat ./archivesToTest.txt'
-         echo "$data"
+          echo "$data"
       - name: Run script
         run: echo "El archivo fue modificado"
