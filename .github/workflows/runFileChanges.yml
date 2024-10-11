@@ -23,6 +23,6 @@ jobs:
           fi
       - name: GitStatus
         run: |
-          git status
+          git show --name-only --pretty=format: HEAD
       - name: Run script
         run: echo "El archivo fue modificado"
