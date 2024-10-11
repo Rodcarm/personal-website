@@ -1,2 +1,2 @@
 webpersonal/core/views.py
-webpersonal/portafolio/
+webpersonal/portafolio/views.py
