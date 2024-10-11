@@ -16,6 +16,6 @@ jobs:
         run: |
           while IFS= read -r line; do
             echo "$line"
-          done < 
+          done < archivesToTest.txt
       - name: Run script
         run: echo "El archivo fue modificado"
