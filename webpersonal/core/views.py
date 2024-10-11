@@ -12,4 +12,5 @@ def about(request):
 
 
 def contact(request):
+    print("dest")
     return render(request,"core/contact.html")

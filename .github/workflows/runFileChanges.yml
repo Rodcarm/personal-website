@@ -21,9 +21,8 @@ jobs:
           else
             echo "El archivo archivesToTest.txt no existe"
           fi
-      - name: read txt
+      - name: GitStatus
         run: |
-          data='cat archivesToTest.txt'
-          echo "$data"
+          git status
       - name: Run script
         run: echo "El archivo fue modificado"
