@@ -4,7 +4,7 @@ from .models import Project
 # Create your views here.
 
 def portfolio(request):
-    print("another archive")
+    print("another archaasdaive")
     projects = Project.objects.all()
     return render(request,"portfolio/portfolio.html", {'projects':projects})
 

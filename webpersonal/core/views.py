@@ -6,7 +6,7 @@ def home(request):
     return render(request, "core/home.html")
 
 def about(request):
-    print("a")
+    print("asdsdfsd")
     return render(request,"core/about.html")
 
 
