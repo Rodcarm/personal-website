@@ -12,17 +12,27 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          repository: 'Rodcarm/personal-website' # Correct repository reference
+          token: ${{ secrets.API_TOKEN_GITHUB }}
+          ref: main
+          fetch-depth: 0
+      - name: Set up Git Configuration
+        run: |
+          git config --global user.name "Rodrigo"
+          git config --global user.email "rcarmona@realmetrics.io"
       - name: Print each line of the text
         run: |
           if [[ -f archivesToTest.txt ]]; then
             while IFS= read -r line || [[ -n "$line" ]]; do
               echo "$line"
+              git add "$line"
             done < archivesToTest.txt
           else
             echo "El archivo archivesToTest.txt no existe"
           fi
-      - name: GitStatus
+      - name:
         run: |
-          git show --name-only --pretty=format: HEAD
+          git status
       - name: Run script
         run: echo "El archivo fue modificado"
