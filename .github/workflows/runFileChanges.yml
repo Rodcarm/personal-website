@@ -15,7 +15,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: './archivesToTest.txt'
+          source-files: './files/new-files/archivesToTest.txt'
           destination-branch: 'main'
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
