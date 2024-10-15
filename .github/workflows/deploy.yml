@@ -19,7 +19,7 @@ jobs:
           
       - name: Set up Git Configuration
         run: |
-          git config --global user.name "Rodrigo" 
+          git config --global user.name "Rodrigo"
           git config --global user.email "rcarmona@realmetrics.io"
       - name: Git status
         run: |
