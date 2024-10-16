@@ -22,8 +22,8 @@ jobs:
         env:
           paths: "${{env.paths}}"
           commit_message: "${{env.commit_message}}"
-          USER_COMMIT: "${{USER_COMMIT}}"
-          EMAIL: "${{EMAIL}}"
+          USER_COMMIT: "${{env.USER_COMMIT}}"
+          EMAIL: "${{env.EMAIL}}"
         run: |
           echo "${paths}"
           echo "${commit_message}"
