@@ -28,23 +28,23 @@
 #         run: |
 #           git push --force https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/gitActionspersonal-website.git
 
-name: Deploy
-on:
-  push:
-    branches:
-      - main
-jobs:
-  file-update-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Push file
-        uses: nkoppel/push-files-to-another-repository@v1.1.3
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-files: './webpersonal/core/views.py'
-          destination-branch: 'main'
-          destination-username: 'Rodcarm'
-          destination-repository: 'gitActionspersonal-website'
-          destination-directory: 'webpersonal/core'
-          commit-email: rcarmona@realmetrics.io
+# name: Deploy
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   file-update-job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Push file
+#         uses: nkoppel/push-files-to-another-repository@v1.1.3
+#         env:
+#           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+#         with:
+#           source-files: './webpersonal/core/views.py'
+#           destination-branch: 'main'
+#           destination-username: 'Rodcarm'
+#           destination-repository: 'gitActionspersonal-website'
+#           destination-directory: 'webpersonal/core'
+#           commit-email: rcarmona@realmetrics.io

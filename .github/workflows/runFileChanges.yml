@@ -2,7 +2,7 @@ name: Run File Changes
 on:
   push:
     branches:
-      - test
+      - main
     # paths:
     #   - 'archivesToTest.txt'
       #- 'webpersonal/core/views.py'
