@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 # Create your views here.
-print("viewSocila")
+print("no debe de estar")

@@ -6,7 +6,7 @@ def home(request):
     return render(request, "core/home.html")
 
 def about(request):
-    print("se logro?")
+    print("esto es views.py en core")
     return render(request,"core/about.html")
 
 
