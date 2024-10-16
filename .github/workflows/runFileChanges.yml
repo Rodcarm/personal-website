@@ -16,6 +16,7 @@ jobs:
           commit_message=$(jq -r ".commit_message" files/new-files/deploy.json)
           echo "${commit_message}"
           echo "${{ github.actor }}"
+          echo ${{ github.event.head_commit.author.email }}
       # - name: Push file to another repository
       #   uses: nkoppel/push-files-to-another-repository@v1.1.3
       #   env:
