@@ -7,6 +7,8 @@ jobs:
   file-update-controller:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       - name: Get Var
         run: |
           paths=$(jq -r ".paths[]" files/new-files/deploy.json)
