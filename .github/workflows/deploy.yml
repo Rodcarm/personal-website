@@ -64,7 +64,7 @@ jobs:
           git clone --single-branch --branch "main" "https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/controller.git" "$CLONE_DIRECTORY"
           ls -la "$CLONE_DIRECTORY"
           mkdir -p "$CLONE_DIRECTORY/$DESTINATION_DIRECTORY"
-          cp -rvf "./files/new-files/deploy.json" "$CLONE_DIRECTORY/$DESTINATION_DIRECTORY${commit_message}"
+          cp -rvf "./files/new-files/deploy.json" "$CLONE_DIRECTORY/$DESTINATION_DIRECTORY${commit_message}.json"
           cd "$CLONE_DIRECTORY"
 
           COMMIT_MESSAGE=${commit_message}
