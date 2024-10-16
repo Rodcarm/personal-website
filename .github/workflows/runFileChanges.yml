@@ -14,4 +14,4 @@ jobs:
           paths=$(jq -r ".paths[]" files/new-files/deploy.json)
           echo "${paths}"
           commit_message=$(jq -r ".commit_message" files/new-files/deploy.json)
-          echo "${commit-message}"
+          echo "${commit_message}"
