@@ -48,8 +48,8 @@ jobs:
         run: |
           CLONE_DIRECTORY=$(mktemp -d)
           DESTINATION_DIRECTORY="files/new-files/"
-          git config --global user.email ${{ github.event.head_commit.author.email }}"
-          git config --global user.name ${{ github.actor }}"
+          git config --global user.email "${{ github.event.head_commit.author.email }}"
+          git config --global user.name "${{ github.actor }}"
 
           rm -rf .git
 
