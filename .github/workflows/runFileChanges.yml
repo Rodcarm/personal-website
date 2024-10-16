@@ -22,9 +22,8 @@ jobs:
         run: |
           new_author="${{ env.EMAIL }}"
           jq --arg author "$new_author" '. + {"author": $author}' files/new-files/deploy.json > files/new-files/deploy_temp.json && mv files/new-files/deploy_temp.json files/new-files/deploy.json
-          echo "${commit_message}"
-          echo "${USER_COMMIT}"
-          echo ${EMAIL}
+          mv files/new-files/deploy_temp.json files/new-files/deploy.json
+          jq '.' files/new-files/deploy.json
       - name: Push file to another repository
         uses: nkoppel/push-files-to-another-repository@v1.1.3
         env:
