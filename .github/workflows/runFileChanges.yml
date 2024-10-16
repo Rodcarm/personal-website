@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'deploy.json'
 jobs:
   file-update-controller:
     runs-on: ubuntu-latest
@@ -33,7 +35,7 @@ jobs:
           destination-branch: 'main'
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
-          destination-directory: 'files/new-files/test.txt'
+          destination-directory: 'files/new-files/'
           commit-email: "${{ env.USER_COMMIT }}"
           commit-username: "${{ env.EMAIL }}"
           commit-message: "${{ env.commit_message }}"
