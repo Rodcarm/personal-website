@@ -4,7 +4,7 @@ from .models import Project
 # Create your views here.
 
 def portfolio(request):
-    print("this is other test2")
+    print("esto es portafolio")
     projects = Project.objects.all()
     return render(request,"portfolio/portfolio.html", {'projects':projects})
 
