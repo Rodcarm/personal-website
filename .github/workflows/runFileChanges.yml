@@ -19,11 +19,6 @@ jobs:
           echo "EMAIL=${{ github.event.head_commit.author.email }}" >> $GITHUB_ENV
           
       - name: print Var
-        env:
-          paths: "${{env.paths}}"
-          commit_message: "${{env.commit_message}}"
-          USER_COMMIT: "${{env.USER_COMMIT}}"
-          EMAIL: "${{env.EMAIL}}"
         run: |
           echo "${paths}"
           echo "${commit_message}"
