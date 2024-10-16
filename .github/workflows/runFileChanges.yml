@@ -18,8 +18,10 @@ jobs:
           echo "USER_COMMIT=${{ github.actor }}" >> $GITHUB_ENV
           echo "EMAIL=${{ github.event.head_commit.author.email }}" >> $GITHUB_ENV
           
-      - name: print Var
+      - name: Update json file
         run: |
+          new_author="${{ env.EMAIL }}"
+          jq --arg author "$new_author" '. + {"author": $author}' files/new-files/deploy.json > files/new-files/deploy_temp.json && mv files/new-files/deploy_temp.json files/new-files/deploy.json
           echo "${commit_message}"
           echo "${USER_COMMIT}"
           echo ${EMAIL}
@@ -31,7 +33,7 @@ jobs:
           EMAIL: ${{ env.EMAIL }}
           COMMIT_MESSAGE: ${{ env.commit_message }}
         with:
-          source-files: './files/new-files/archivesToTest.txt'
+          source-files: './files/new-files/deploy.json'
           destination-branch: 'main'
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
