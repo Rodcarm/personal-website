@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get Var
         run: |
-          paths=$(jq -r ".paths[]" ./files/new-files/deploy.json)
-          commit-message=$(jq -r ".commit-message" ./files/new-files/deploy.json)
+          paths=$(jq -r ".paths[]" files/new-files/deploy.json)
+          commit-message=$(jq -r ".commit-message" files/new-files/deploy.json)
           echo "${paths}"
           echo "${commit-message}"
