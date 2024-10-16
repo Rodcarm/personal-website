@@ -13,10 +13,17 @@ jobs:
         run: |
           paths=$(jq -r ".paths[]" files/new-files/deploy.json) >> $GITHUB_ENV
           commit_message=$(jq -r ".commit_message" files/new-files/deploy.json) >> $GITHUB_ENV
-          USER_COMMIT="${{ github.actor }}" >> $GITHUB_ENV
-          EMAIL=${{ github.event.head_commit.author.email }} >> $GITHUB_ENV
+          echo "paths=${paths}" >> $GITHUB_ENV
+          echo "commit_message=${commit_message}" >> $GITHUB_ENV
+          echo "USER_COMMIT=${{ github.actor }}" >> $GITHUB_ENV
+          echo "EMAIL=${{ github.event.head_commit.author.email }}" >> $GITHUB_ENV
           
       - name: print Var
+        env:
+          paths: "${{env.paths}}"
+          commit_message: "${{env.commit_message}}"
+          USER_COMMIT: "${{USER_COMMIT}}"
+          EMAIL: "${{EMAIL}}"
         run: |
           echo "${paths}"
           echo "${commit_message}"
