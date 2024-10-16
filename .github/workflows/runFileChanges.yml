@@ -3,15 +3,13 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'deploy.json'
 jobs:
   file-update-controller:
     runs-on: ubuntu-latest
     steps:
       - name: Get Var
         run: |
-          paths=$(jq -r ".paths[]" deploy.json)
-          commit-message=$(jq -r ".commit-message" deploy.json)
+          paths=$(jq -r ".paths[]" ./files/new-files/deploy.json)
+          commit-message=$(jq -r ".commit-message" ./files/new-files/deploy.json)
           echo "${paths}"
           echo "${commit-message}"
