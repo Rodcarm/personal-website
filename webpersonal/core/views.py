@@ -6,7 +6,7 @@ def home(request):
     return render(request, "core/home.html")
 
 def about(request):
-    print("seguno test general")
+    print("tercer test general")
     return render(request,"core/about.html")
 
 
