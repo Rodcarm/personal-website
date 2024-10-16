@@ -4,5 +4,5 @@
        "webpersonal/core/prueba.py",
        "webpersonal/portfolio/views.py"
     ],
-    "commit_message": "update-views"
+    "commit_message": "update-webpersonal-views"
 }
