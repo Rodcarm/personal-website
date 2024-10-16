@@ -21,14 +21,16 @@ jobs:
           echo "${commit_message}"
           echo "${USER_COMMIT}"
           echo ${EMAIL}
-      # - name: Push file to another repository
-      #   uses: nkoppel/push-files-to-another-repository@v1.1.3
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source-files: './files/new-files/archivesToTest.txt'
-      #     destination-branch: 'main'
-      #     destination-username: 'Rodcarm'
-      #     destination-repository: 'controller'
-      #     destination-directory: 'files/new-files/test.txt'
-      #     commit-email: rcarmona@realmetrics.io
+      - name: Push file to another repository
+        uses: nkoppel/push-files-to-another-repository@v1.1.3
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-files: './files/new-files/archivesToTest.txt'
+          destination-branch: 'main'
+          destination-username: 'Rodcarm'
+          destination-repository: 'controller'
+          destination-directory: 'files/new-files/test.txt'
+          commit-email: "${EMAIL}"
+          commit-username: "${USER_COMMIT}"
+          commit-message: "${commit_message}"
