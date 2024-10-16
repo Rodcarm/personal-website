@@ -25,12 +25,15 @@ jobs:
         uses: nkoppel/push-files-to-another-repository@v1.1.3
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          USER_COMMIT: ${{ env.USER_COMMIT }} 
+          EMAIL: ${{ env.EMAIL }}
+          COMMIT_MESSAGE: ${{ env.commit_message }}
         with:
           source-files: './files/new-files/archivesToTest.txt'
           destination-branch: 'main'
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
           destination-directory: 'files/new-files/test.txt'
-          commit-email: "Rodrigo"
-          commit-username: "rcarmona@realmetrics.io"
-          commit-message: this is a test with json
+          commit-email: "${{ env.USER_COMMIT }}"
+          commit-username: "${{ env.EMAIL }}"
+          commit-message: "${{ env.commit_message }}"
