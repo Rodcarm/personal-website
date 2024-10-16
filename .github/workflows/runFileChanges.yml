@@ -31,6 +31,6 @@ jobs:
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
           destination-directory: 'files/new-files/test.txt'
-          commit-email: ${EMAIL}
-          commit-username: ${USER_COMMIT}
-          commit-message: ${commit_message}
+          commit-email: "Rodrigo"
+          commit-username: "rcarmona@realmetrics.io"
+          commit-message: this is a test with json
