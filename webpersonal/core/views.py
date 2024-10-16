@@ -11,5 +11,5 @@ def about(request):
 
 
 def contact(request):
-    print("dest")
+    print("ttttt")
     return render(request,"core/contact.html")
