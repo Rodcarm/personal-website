@@ -57,7 +57,7 @@ jobs:
           cd repo
           ls -la
 
-          new_author="${{ github.event.head_commit.author.email }}""
+          new_author="${{ github.event.head_commit.author.email }}"
           jq --arg author "$new_author" '.author = $author' files/new-files/deploy.json > files/new-files/deploy_temp.json && mv files/new-files/deploy_temp.json files/new-files/deploy.json
           commit_message=$(jq -r ".commit_message" files/new-files/deploy.json)
 
