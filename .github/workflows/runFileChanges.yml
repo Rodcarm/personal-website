@@ -19,7 +19,7 @@ jobs:
           destination-branch: 'main'
           destination-username: 'Rodcarm'
           destination-repository: 'controller'
-          destination-directory: 'files/new-files'
+          destination-directory: 'files/new-files/test.txt'
           commit-email: rcarmona@realmetrics.io
 
       # - name: Get main repo
