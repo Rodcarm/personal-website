@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 
-
+print("Esto es un test para la carpeta core")
 # Create your views here.
 def home(request):
     return render(request, "core/home.html")
