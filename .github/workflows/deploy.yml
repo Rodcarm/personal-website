@@ -22,7 +22,7 @@ jobs:
 
           rm -rf .git
 
-          git clone https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/personal-website.git repo
+          git clone https://github.com/Rodcarm/personal-website.git repo
           cd repo
           ls -la
 
@@ -30,7 +30,7 @@ jobs:
           jq --arg author "$new_author" '.author = $author' files/new-files/deploy.json > files/new-files/deploy_temp.json && mv files/new-files/deploy_temp.json files/new-files/deploy.json
           commit_message=$(jq -r ".commit_message" files/new-files/deploy.json)
 
-          git clone --single-branch --branch "main" "https://${{ secrets.API_TOKEN_GITHUB }}@github.com/Rodcarm/controller.git" "$CLONE_DIRECTORY"
+          git clone --single-branch --branch "main" "https://github.com/Rodcarm/controller.git" "$CLONE_DIRECTORY"
           ls -la "$CLONE_DIRECTORY"
           mkdir -p "$CLONE_DIRECTORY/$DESTINATION_DIRECTORY"
           cp -rvf "./files/new-files/deploy.json" "$CLONE_DIRECTORY/$DESTINATION_DIRECTORY${commit_message}.json"
